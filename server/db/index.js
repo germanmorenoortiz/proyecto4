@@ -6,6 +6,7 @@ const { Pool } = pg;
 
 const pool = new Pool({
   connectionString:
+    process.env.DATABASE_URL ||
     'postgresql://oscar_german:valerialigiasami@localhost:5432/recetario',
 });
 export const query = async ({ tag = '', queryString, params }) => {
